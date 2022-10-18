@@ -17,7 +17,7 @@
       <div class="container-fluid">
         <a class="navbar-brand">WAM Store</a>
         <a href="{% url 'create-store-item' %}">
-        <button class="d-flex btn btn-outline-light" type="submit">
+        <button class="d-flex btn btn-outline-light btn btn-success" type="submit">
           Add Item
         </button>
       </a>
@@ -39,10 +39,10 @@
                 <h6 class="card-subtitle mb-2 text-muted">Kind: {{ item.kind }}</h6>
                 <p class="card-text">{{ item.description }}</p> 
                 <a href="{% url 'update-store-item' item_id=item.id %}">
-                <button>Edit</button>
+                <button class="btn btn-primary">Edit</button>
               </a>
               <a href="{% url 'delete-store-item' item_id=item.id %}">
-                <button>Delete</button>
+                <button class="btn btn-danger">Delete</button>
               </a>
               </div>
             </div>

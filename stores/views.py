@@ -6,7 +6,7 @@ from .forms import StoreItemForm
 from .models import StoreItem
 
 
-def get_store_items(request: HttpRequest) -> HttpResponse:
+def get_store_items(request):
     store_items: list[models.StoreItem] = list(models.StoreItem.objects.all())
     context = {
         "store_items": store_items,
@@ -33,12 +33,10 @@ def create_store_item(request):
             form.save()
             return redirect("store-item-list")
 
-
     context = {
         "form": form,
     }
-
-
+    
     return render (request, "create_store_item.html", context)
 
 def update_store_item(request, item_id):
